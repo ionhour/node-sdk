@@ -1,0 +1,48 @@
+{
+  "name": "@ionhour/nestjs",
+  "version": "0.1.0",
+  "description": "Ionhour NestJS SDK -- heartbeat monitoring for NestJS services, with an @IonhourJob decorator that composes with @Cron.",
+  "license": "MIT",
+  "type": "commonjs",
+  "main": "./src/index.js",
+  "types": "./src/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./src/index.d.ts",
+      "default": "./src/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "sideEffects": false,
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "ionhour",
+    "monitoring",
+    "uptime",
+    "heartbeat",
+    "cron",
+    "nestjs"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ionhour/node-sdk.git",
+    "directory": "nestjs"
+  },
+  "homepage": "https://github.com/ionhour/node-sdk#readme",
+  "bugs": {
+    "url": "https://github.com/ionhour/node-sdk/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@ionhour/core": "^0.1.0"
+  },
+  "peerDependencies": {
+    "@nestjs/common": "^10.0.0 || ^11.0.0",
+    "@nestjs/core": "^10.0.0 || ^11.0.0",
+    "reflect-metadata": "^0.1.13 || ^0.2.0"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "name": "@ionhour/core",
+  "version": "0.1.0",
+  "description": "Ionhour Node SDK -- register heartbeat jobs and send success/fail pings from any Node application.",
+  "license": "MIT",
+  "type": "commonjs",
+  "main": "./src/index.js",
+  "types": "./src/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./src/index.d.ts",
+      "default": "./src/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "sideEffects": false,
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "ionhour",
+    "monitoring",
+    "uptime",
+    "heartbeat",
+    "cron"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ionhour/node-sdk.git",
+    "directory": "core"
+  },
+  "homepage": "https://github.com/ionhour/node-sdk#readme",
+  "bugs": {
+    "url": "https://github.com/ionhour/node-sdk/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

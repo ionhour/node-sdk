@@ -1,0 +1,42 @@
+{
+  "name": "sdk-express",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/sdk-express/src",
+  "projectType": "library",
+  "release": {
+    "version": {
+      "manifestRootsToUpdate": ["dist/{projectRoot}"],
+      "currentVersionResolver": "registry",
+      "fallbackCurrentVersionResolver": "disk"
+    }
+  },
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/sdk-express",
+        "tsConfig": "libs/sdk-express/tsconfig.lib.json",
+        "packageJson": "libs/sdk-express/package.json",
+        "main": "libs/sdk-express/src/index.ts",
+        "assets": [
+          { "input": "libs/sdk-express", "glob": "*.md", "output": "." },
+          { "input": "libs/sdk-express", "glob": "LICENSE", "output": "." }
+        ]
+      }
+    },
+    "nx-release-publish": {
+      "options": {
+        "packageRoot": "dist/{projectRoot}"
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "libs/sdk-express/jest.config.ts"
+      }
+    }
+  }
+}
