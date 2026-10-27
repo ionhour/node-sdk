@@ -1,0 +1,12 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../../dist/libs/sdk-nestjs",
+    "declaration": true,
+    "importHelpers": false,
+    "types": ["node"],
+    "target": "es2021"
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["**/*.spec.ts", "**/*.test.ts", "**/__testutils__/**"]
+}

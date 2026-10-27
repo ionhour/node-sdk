@@ -1,0 +1,12 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../../dist/libs/sdk-express",
+    "declaration": true,
+    "importHelpers": false,
+    "types": ["node", "express"],
+    "target": "es2021"
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["**/*.spec.ts", "**/*.test.ts", "**/__testutils__/**"]
+}

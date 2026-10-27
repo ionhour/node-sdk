@@ -1,0 +1,43 @@
+{
+  "name": "sdk-core",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/sdk-core/src",
+  "projectType": "library",
+  "release": {
+    "version": {
+      "manifestRootsToUpdate": ["dist/{projectRoot}"],
+      "currentVersionResolver": "registry",
+      "fallbackCurrentVersionResolver": "disk"
+    }
+  },
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/sdk-core",
+        "tsConfig": "libs/sdk-core/tsconfig.lib.json",
+        "packageJson": "libs/sdk-core/package.json",
+        "main": "libs/sdk-core/src/index.ts",
+        "assets": [
+          {
+            "input": "libs/sdk-core",
+            "glob": "*.md",
+            "output": "."
+          },
+          {
+            "input": "libs/sdk-core",
+            "glob": "LICENSE",
+            "output": "."
+          }
+        ]
+      }
+    },
+    "nx-release-publish": {
+      "options": {
+        "packageRoot": "dist/{projectRoot}"
+      }
+    }
+  }
+}
